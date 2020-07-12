@@ -56,5 +56,32 @@ console.log("\n")
 console.log("Siendo el Punto Actual  " + miPunto6 + ":")
 console.log(miPunto6.calcularMasCercano(array4))
 
+//Modificar el fichero main para crear un objeto de la clase triangulo e invocar al método calcularLongitudLados
+import {Triangulo} from "./1"
+
+let miTriangulo1 = new Triangulo(miPunto2,miPunto5,miPunto6)
+let miTriangulo2 = new Triangulo(miPunto4,miPunto1,miPunto3)
+
+console.log("\n")
+console.log("Los Puntos del Triánglo 1 son")
+console.log(miTriangulo1)
+console.log("Los Puntos del Triánglo 2 son")
+console.log(miTriangulo2)
+
+/*Sacar puntos x,y del primer punto del array
+console.log(miTriangulo1.getPunto1())
+sacar x del primer punto del arrray
+console.log(miTriangulo1.getPunto1().getX())
+*/
+console.log("\n")
+
+console.log("Longitudes de cada uno de los lados del triángulo 1")
+console.log(miTriangulo1.calcularLongitudLados())
+console.log("Longitudes de cada uno de los lados del triángulo 2")
+console.log(miTriangulo2.calcularLongitudLados())
+
+
+
+
 
 

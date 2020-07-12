@@ -3,7 +3,7 @@
 • x: number
 • y: number */
 exports.__esModule = true;
-exports.Punto = void 0;
+exports.Triangulo = exports.Punto = void 0;
 var Punto = /** @class */ (function () {
     //2. Crear un constructor que reciba como parámetros las coordenadas, x e y
     function Punto(x, y) {
@@ -94,3 +94,33 @@ var Punto = /** @class */ (function () {
     return Punto;
 }());
 exports.Punto = Punto;
+/*Crea la clase Triangulo cuyo constructor reciba tres objetos de la clase Punto
+que son sus vértices.
+14. Tiene que tener como atributos privados los tres vertices*/
+var Triangulo = /** @class */ (function () {
+    function Triangulo(punto1, punto2, punto3) {
+        this.punto1 = punto1;
+        this.punto2 = punto2;
+        this.punto3 = punto3;
+    }
+    Triangulo.prototype.getPunto1 = function () {
+        return this.punto1;
+    };
+    Triangulo.prototype.getPunto2 = function () {
+        return this.punto2;
+    };
+    Triangulo.prototype.getPunto3 = function () {
+        return this.punto3;
+    };
+    //15. Programa el método calcularLongitudLados() : number[] que debe devolver un array de tres posiciones, cada una de las cuales debe ser la longitud de uno de los lados del triángulo. 
+    Triangulo.prototype.calcularLongitudLados = function () {
+        var posiciones = new Array(3);
+        var dist1, dist2, dist3;
+        dist1 = Math.sqrt(Math.pow((this.punto3.getX() - this.punto2.getX()), 2) + Math.pow((this.punto3.getY() - this.punto2.getY()), 2));
+        dist2 = Math.sqrt(Math.pow((this.punto2.getX() - this.punto1.getX()), 2) + Math.pow((this.punto3.getY() - this.punto1.getY()), 2));
+        dist3 = Math.sqrt(Math.pow((this.punto1.getX() - this.punto3.getX()), 2) + Math.pow((this.punto1.getY() - this.punto3.getY()), 2));
+        return [dist1, dist2, dist3];
+    };
+    return Triangulo;
+}());
+exports.Triangulo = Triangulo;

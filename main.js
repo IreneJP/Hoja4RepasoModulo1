@@ -32,14 +32,33 @@ var array2 = [miPunto2, miPunto3];
 var array3 = [miPunto3, miPunto4];
 var array4 = [miPunto4, miPunto5];
 var array5 = [miPunto5, miPunto6];
-console.log("Siendo Punto Actual  " + miPunto2 + ":");
+console.log("Siendo el Punto Actual  " + miPunto2 + ":");
 console.log(miPunto2.calcularMasCercano(array1));
 console.log("\n");
-console.log("Siendo Punto Actual  " + miPunto3 + ":");
+console.log("Siendo el Punto Actual  " + miPunto3 + ":");
 console.log(miPunto3.calcularMasCercano(array2));
 console.log("\n");
-console.log("Siendo Punto Actual  " + miPunto4 + ":");
+console.log("Siendo el Punto Actual  " + miPunto4 + ":");
 console.log(miPunto4.calcularMasCercano(array5));
 console.log("\n");
-console.log("Siendo Punto Actual  " + miPunto6 + ":");
+console.log("Siendo el Punto Actual  " + miPunto6 + ":");
 console.log(miPunto6.calcularMasCercano(array4));
+//Modificar el fichero main para crear un objeto de la clase triangulo e invocar al método calcularLongitudLados
+var _1_2 = require("./1");
+var miTriangulo1 = new _1_2.Triangulo(miPunto2, miPunto5, miPunto6);
+var miTriangulo2 = new _1_2.Triangulo(miPunto4, miPunto1, miPunto3);
+console.log("\n");
+console.log("Los Puntos del Triánglo 1 son");
+console.log(miTriangulo1);
+console.log("Los Puntos del Triánglo 2 son");
+console.log(miTriangulo2);
+/*Sacar puntos x,y del primer punto del array
+console.log(miTriangulo1.getPunto1())
+sacar x del primer punto del arrray
+console.log(miTriangulo1.getPunto1().getX())
+*/
+console.log("\n");
+console.log("Longitudes de cada uno de los lados del triángulo 1");
+console.log(miTriangulo1.calcularLongitudLados());
+console.log("Longitudes de cada uno de los lados del triángulo 2");
+console.log(miTriangulo2.calcularLongitudLados());

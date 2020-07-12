@@ -131,4 +131,46 @@ calcularCuadrante():number{
         }*/
 } 
 
+/*Crea la clase Triangulo cuyo constructor reciba tres objetos de la clase Punto
+que son sus vértices.
+14. Tiene que tener como atributos privados los tres vertices*/
 
+
+export class Triangulo{
+        private punto1: Punto
+        private punto2: Punto
+        private punto3: Punto
+
+    constructor (punto1:Punto,punto2:Punto,punto3:Punto){
+        this.punto1 = punto1
+        this.punto2 = punto2
+        this.punto3 = punto3
+
+    }
+
+    public getPunto1(){
+        return this.punto1
+    }
+    public getPunto2(){
+        return this.punto2
+    }
+    public getPunto3(){
+        return this.punto3
+    }
+   
+
+//15. Programa el método calcularLongitudLados() : number[] que debe devolver un array de tres posiciones, cada una de las cuales debe ser la longitud de uno de los lados del triángulo. 
+    calcularLongitudLados() :number[]{
+        let posiciones= new Array(3)
+        let dist1:number, dist2:number, dist3:number
+        dist1 = Math.sqrt(Math.pow((this.punto3.getX()-this.punto2.getX()),2) + Math.pow((this.punto3.getY()-this.punto2.getY()),2))
+        dist2 = Math.sqrt(Math.pow((this.punto2.getX()-this.punto1.getX()),2) + Math.pow((this.punto3.getY()-this.punto1.getY()),2))
+        dist3 = Math.sqrt(Math.pow((this.punto1.getX()-this.punto3.getX()),2) + Math.pow((this.punto1.getY()-this.punto3.getY()),2))
+
+    
+
+       
+        return [dist1,dist2,dist3]
+    }
+
+}
